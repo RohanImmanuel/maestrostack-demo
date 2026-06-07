@@ -75,19 +75,11 @@ Three flows execute against the Wikipedia sample app (`org.wikipedia`):
 
 ## Repo layout
 
-```
-.
-├── maestrostack.yml        # the demo config (Android, points at apps/WikipediaSample.apk)
-├── apps/
-│   └── WikipediaSample.apk # the sample app, committed so the demo runs straight after clone
-├── smoke/
-│   ├── onboarding.yml
-│   └── search.yml
-├── regression/
-│   └── article.yml
-├── package.json            # maestrostack as a devDependency + convenience scripts
-└── .env.example            # credential template
-```
+`maestrostack.yml` is the entry point — it wires the app, the flows, and the target devices
+together. The flows live in `smoke/` and `regression/`, split the way you'd organize a real suite,
+and `apps/` holds the Wikipedia APK (committed so there's nothing to download first). The rest is
+plumbing: `package.json` pins the `maestrostack` CLI and adds the `validate`/`dry-run`/`run`
+scripts, and `.env.example` is the credential template you copy to `.env`.
 
 ## Customizing
 

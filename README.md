@@ -75,11 +75,13 @@ Three flows execute against the Wikipedia sample app (`org.wikipedia`):
 
 ## Repo layout
 
-`maestrostack.yml` is the entry point — it wires the app, the flows, and the target devices
-together. The flows live in `smoke/` and `regression/`, split the way you'd organize a real suite,
-and `apps/` holds the Wikipedia APK (committed so there's nothing to download first). The rest is
-plumbing: `package.json` pins the `maestrostack` CLI and adds the `validate`/`dry-run`/`run`
-scripts, and `.env.example` is the credential template you copy to `.env`.
+Start with `maestrostack.yml` — it ties everything below together.
+
+- **`maestrostack.yml`** — the config: which app, which flows, which devices.
+- **`smoke/`, `regression/`** — the Maestro flows, split like a real suite.
+- **`apps/`** — the Wikipedia APK, committed so there's nothing to download.
+- **`package.json`** — pins the CLI and adds the `validate` / `dry-run` / `run` scripts.
+- **`.env.example`** — copy to `.env` and drop in your credentials.
 
 ## Customizing
 

@@ -22,8 +22,8 @@ Add your BrowserStack credentials, run one command, and watch a build appear on 
 
 ```bash
 # 1. Clone and install (pulls the maestrostack CLI as a local devDependency)
-git clone https://github.com/RohanImmanuel/MaestroStackDemo.git
-cd MaestroStackDemo
+git clone https://github.com/RohanImmanuel/maestrostack-demo.git
+cd maestrostack-demo
 npm install
 
 # 2. Provide your BrowserStack credentials (either way works)

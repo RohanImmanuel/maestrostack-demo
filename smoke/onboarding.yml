@@ -1,0 +1,19 @@
+# Smoke: launch the Wikipedia app and clear the first-run onboarding carousel,
+# landing on the main screen with the search bar visible.
+appId: org.wikipedia
+---
+- launchApp:
+    clearState: true
+# The onboarding carousel only appears on a fresh install, so every tap is
+# optional — on devices that skip it the flow still proceeds to the assertion.
+- tapOn:
+    text: "Skip"
+    optional: true
+- tapOn:
+    text: "Get started"
+    optional: true
+- tapOn:
+    text: "Continue"
+    optional: true
+- assertVisible:
+    text: "Search Wikipedia"

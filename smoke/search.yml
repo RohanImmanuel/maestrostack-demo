@@ -1,0 +1,13 @@
+# Smoke: search for an article and confirm a matching result is shown.
+appId: org.wikipedia
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    text: "Skip"
+    optional: true
+- tapOn:
+    text: "Search Wikipedia"
+- inputText: "Maestro"
+- assertVisible:
+    text: "Maestro.*"

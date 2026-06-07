@@ -1,0 +1,14 @@
+{
+  "name": "maestrostack-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Clone-and-run demo for maestrostack: Maestro flows for the Wikipedia sample app, executed on BrowserStack App Automate.",
+  "scripts": {
+    "validate": "maestrostack validate",
+    "dry-run": "maestrostack run --dry-run",
+    "run": "maestrostack run"
+  },
+  "devDependencies": {
+    "maestrostack": "^0.1.1"
+  }
+}

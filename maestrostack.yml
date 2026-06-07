@@ -1,0 +1,38 @@
+version: 1
+
+auth:
+  username: ${BROWSERSTACK_USERNAME}
+  accessKey: ${BROWSERSTACK_ACCESS_KEY}
+
+platform: android
+
+app:
+  source: upload
+  path: ./apps/WikipediaSample.apk
+  customId: WikipediaSampleApp
+
+suite:
+  root: .
+  packageName: Flows.zip
+  customId: WikipediaDemo
+  include:
+    - smoke/**/*.yml
+    - regression/**/*.yml
+  exclude:
+    - apps/**
+
+run:
+  project: MaestroStack_Demo
+  devices:
+    - Samsung Galaxy S20-10.0
+    - Google Pixel 7-13.0
+    - Samsung Galaxy S22-12.0
+  maxParallel: 2
+  executeMode: explicit
+  execute:
+    - smoke/onboarding.yml
+    - smoke/search.yml
+    - regression/article.yml
+  options:
+    networkLogs: true
+    deviceLogs: true

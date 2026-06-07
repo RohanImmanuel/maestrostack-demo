@@ -1,0 +1,21 @@
+# Regression: open an article from search results and scroll through its content.
+appId: org.wikipedia
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    text: "Skip"
+    optional: true
+- tapOn:
+    text: "Search Wikipedia"
+- inputText: "Albert Einstein"
+- tapOn:
+    text: "Albert Einstein"
+    index: 0
+- assertVisible:
+    text: "Albert Einstein"
+- scroll
+- scroll
+- assertVisible:
+    text: ".*physic.*"
+    optional: true

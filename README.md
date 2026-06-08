@@ -65,7 +65,7 @@ the first two devices together and the third in a second batch:
 | Google Pixel 7 | 13.0 |
 | Samsung Galaxy S22 | 12.0 |
 
-Three flows execute against the Wikipedia sample app (`org.wikipedia`):
+Three flows execute against the Wikipedia sample app (`org.wikipedia.alpha`):
 
 | Flow | What it checks |
 | --- | --- |

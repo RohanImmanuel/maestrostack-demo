@@ -1,5 +1,5 @@
 # Regression: open an article from search results and scroll through its content.
-appId: org.wikipedia
+appId: org.wikipedia.alpha
 ---
 - launchApp:
     clearState: true

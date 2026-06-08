@@ -1,6 +1,6 @@
 # Smoke: launch the Wikipedia app and clear the first-run onboarding carousel,
 # landing on the main screen with the search bar visible.
-appId: org.wikipedia
+appId: org.wikipedia.alpha
 ---
 - launchApp:
     clearState: true

@@ -13,6 +13,11 @@ appId: org.wikipedia.alpha
     text: "Allow|While using the app|Don.t allow"
     optional: true
 # Feed search bar (top) reads "Search"; index 0 avoids the bottom "Search" nav tab.
+# Tap twice: the first tap surfaces a one-time "tap to search" coachmark that
+# blocks input; the second dismisses it and focuses the search field.
+- tapOn:
+    text: "Search"
+    index: 0
 - tapOn:
     text: "Search"
     index: 0

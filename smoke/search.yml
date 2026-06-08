@@ -3,8 +3,6 @@ appId: org.wikipedia.alpha
 ---
 - launchApp:
     clearState: true
-# Clear both first-run screens: 3x "Forward" (onboarding) then "Skip"
-# (personalization). See smoke/onboarding.yml for details.
 - tapOn: "Forward"
 - tapOn: "Forward"
 - tapOn: "Forward"
@@ -12,16 +10,11 @@ appId: org.wikipedia.alpha
 - tapOn:
     text: "Allow|While using the app|Don.t allow"
     optional: true
-# The first tap on the feed search bar (index 0 = top bar, not the bottom "Search"
-# nav tab) surfaces a one-time "tap to search" coachmark. Tap "Home" to dismiss it,
-# then tap "Search" again to open the search field cleanly.
+- tapOn: "Search"
+- tapOn: "Search"
 - tapOn:
-    text: "Search"
-    index: 0
-- tapOn: "Home"
-- tapOn:
-    text: "Search"
-    index: 0
+    text: "Search Wikipedia"
+    index: 1
 - inputText: "Maestro"
 - assertVisible:
     text: "Maestro.*"

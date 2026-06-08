@@ -1,22 +1,12 @@
 # Smoke: clear both first-run screens and land on the search/home screen.
-#
-# A fresh install shows TWO screens before the feed (verified against the app
-# source, wikimedia/apps-android-wikipedia):
-#   1. InitialOnboardingScreen — 3 Compose screens (Intro > Data privacy >
-#      Languages), navigated with the "Forward" arrow; no Skip button.
-#   2. PersonalizationActivity — an interest/topic picker launched unconditionally
-#      right after onboarding finishes. It has a "Skip" button that closes it.
 appId: org.wikipedia.alpha
 ---
 - launchApp:
     clearState: true
-# 1) Initial onboarding: Forward through all three screens.
 - tapOn: "Forward"
 - tapOn: "Forward"
 - tapOn: "Forward"
-# 2) Personalization/interests screen: Skip straight to the feed.
 - tapOn: "Skip"
-# Android 13 may now ask for notification permission — dismiss it if it shows.
 - tapOn:
     text: "Allow|While using the app|Don.t allow"
     optional: true

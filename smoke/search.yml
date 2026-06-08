@@ -3,11 +3,12 @@ appId: org.wikipedia.alpha
 ---
 - launchApp:
     clearState: true
+# Clear the 3-screen onboarding via the "Forward" arrow (see onboarding.yml).
+- tapOn: "Forward"
+- tapOn: "Forward"
+- tapOn: "Forward"
 - tapOn:
     text: "Allow|While using the app|Don.t allow"
-    optional: true
-- tapOn:
-    text: "Skip"
     optional: true
 - tapOn:
     text: "Search Wikipedia"

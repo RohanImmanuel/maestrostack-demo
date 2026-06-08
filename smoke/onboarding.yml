@@ -1,19 +1,18 @@
-# Smoke: launch the app, clear the first-run prompts, land on the search screen.
+# Smoke: clear the first-run onboarding and land on the search screen.
+#
+# On a fresh install Wikipedia opens a 3-screen onboarding (Intro > Data privacy >
+# Languages). There is no "Skip" button (see InitialOnboardingScreen.kt upstream) —
+# you advance with the "Forward" arrow, and the arrow on the last screen finishes it.
 appId: org.wikipedia.alpha
 ---
 - launchApp:
     clearState: true
-# First-run interrupts vary by device/OS (notification permission on Android 13,
-# the onboarding carousel on a fresh install) — dismiss whatever shows. Each tap
-# is optional, so the flow proceeds whether or not the prompt appears.
+- tapOn: "Forward"   # Intro -> Data privacy
+- tapOn: "Forward"   # Data privacy -> Languages
+- tapOn: "Forward"   # Languages -> finish onboarding
+# Android 13 may now ask for notification permission — dismiss it if it shows.
 - tapOn:
     text: "Allow|While using the app|Don.t allow"
-    optional: true
-- tapOn:
-    text: "Skip"
-    optional: true
-- tapOn:
-    text: "Get started"
     optional: true
 - assertVisible:
     text: "Search Wikipedia"

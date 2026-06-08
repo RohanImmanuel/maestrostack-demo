@@ -4,11 +4,16 @@ appId: org.wikipedia.alpha
 - launchApp:
     clearState: true
 - tapOn:
+    text: "Allow|While using the app|Don.t allow"
+    optional: true
+- tapOn:
     text: "Skip"
     optional: true
 - tapOn:
     text: "Search Wikipedia"
 - inputText: "Albert Einstein"
+- assertVisible:
+    text: "Albert Einstein"
 - tapOn:
     text: "Albert Einstein"
     index: 0
@@ -16,6 +21,3 @@ appId: org.wikipedia.alpha
     text: "Albert Einstein"
 - scroll
 - scroll
-- assertVisible:
-    text: ".*physic.*"
-    optional: true

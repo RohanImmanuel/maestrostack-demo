@@ -1,19 +1,19 @@
-# Smoke: launch the Wikipedia app and clear the first-run onboarding carousel,
-# landing on the main screen with the search bar visible.
+# Smoke: launch the app, clear the first-run prompts, land on the search screen.
 appId: org.wikipedia.alpha
 ---
 - launchApp:
     clearState: true
-# The onboarding carousel only appears on a fresh install, so every tap is
-# optional — on devices that skip it the flow still proceeds to the assertion.
+# First-run interrupts vary by device/OS (notification permission on Android 13,
+# the onboarding carousel on a fresh install) — dismiss whatever shows. Each tap
+# is optional, so the flow proceeds whether or not the prompt appears.
+- tapOn:
+    text: "Allow|While using the app|Don.t allow"
+    optional: true
 - tapOn:
     text: "Skip"
     optional: true
 - tapOn:
     text: "Get started"
-    optional: true
-- tapOn:
-    text: "Continue"
     optional: true
 - assertVisible:
     text: "Search Wikipedia"

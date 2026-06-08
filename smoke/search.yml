@@ -1,8 +1,11 @@
-# Smoke: search for an article and confirm a matching result is shown.
+# Smoke: search for a term and confirm a matching result is shown.
 appId: org.wikipedia.alpha
 ---
 - launchApp:
     clearState: true
+- tapOn:
+    text: "Allow|While using the app|Don.t allow"
+    optional: true
 - tapOn:
     text: "Skip"
     optional: true

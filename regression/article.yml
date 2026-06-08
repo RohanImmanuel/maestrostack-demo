@@ -12,8 +12,10 @@ appId: org.wikipedia.alpha
 - tapOn:
     text: "Allow|While using the app|Don.t allow"
     optional: true
+# Feed search bar (top) reads "Search"; index 0 avoids the bottom "Search" nav tab.
 - tapOn:
-    text: "Search Wikipedia"
+    text: "Search"
+    index: 0
 - inputText: "Albert Einstein"
 - assertVisible:
     text: "Albert Einstein"

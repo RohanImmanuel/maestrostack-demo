@@ -71,7 +71,7 @@ Three flows execute against the Wikipedia sample app (`org.wikipedia.alpha`):
 | --- | --- |
 | [`smoke/onboarding.yml`](smoke/onboarding.yml) | Launches the app, clears both first-run screens (3-screen onboarding + the personalization/interests picker), lands on the search screen |
 | [`smoke/search.yml`](smoke/search.yml) | Searches for "Maestro" and asserts a matching result appears |
-| [`regression/article.yml`](regression/article.yml) | Opens the "Albert Einstein" article and scrolls through its content |
+| [`regression/article.yml`](regression/article.yml) | Searches "Albert Einstein", opens the article from the results, and confirms the article page loads |
 
 ## Repo layout
 

@@ -1,8 +1,8 @@
 # MaestroStack Demo
 
-A clone-and-run example for [**maestrostack**](https://github.com/RohanImmanuel/maestrostack) —
-a config-driven CLI that packages [Maestro](https://maestro.mobile.dev) mobile UI flows and runs
-them on **BrowserStack App Automate**.
+A clone-and-run example for [**maestrostack**](https://github.com/RohanImmanuel/maestrostack), a
+config-driven CLI that packages [Maestro](https://maestro.mobile.dev) mobile UI flows and runs them
+on **BrowserStack App Automate**.
 
 This repo ships everything you need to see it work end to end:
 
@@ -39,13 +39,13 @@ npx maestrostack run
 ```
 
 `run` uploads the APK and the zipped flows, starts a Maestro build, and prints the build id and a
-dashboard URL — open it to watch the flows execute on real devices.
+dashboard URL. Open that URL to watch the flows execute on real devices.
 
 > `npm run validate`, `npm run dry-run`, and `npm run run` are wired up as shortcuts too.
 
 ### Try it without an account
 
-You can exercise the full packaging pipeline offline — no credentials, no API calls:
+You can exercise the full packaging pipeline offline, with no credentials and no API calls:
 
 ```bash
 npx maestrostack run --dry-run
@@ -69,19 +69,19 @@ Three flows execute against the Wikipedia sample app (`org.wikipedia.alpha`):
 
 | Flow | What it checks |
 | --- | --- |
-| [`smoke/onboarding.yml`](smoke/onboarding.yml) | Launches the app, clears both first-run screens (3-screen onboarding + the personalization/interests picker), lands on the search screen |
+| [`smoke/onboarding.yml`](smoke/onboarding.yml) | Launches the app, clears both first-run screens (3-screen onboarding plus the personalization/interests picker), lands on the search screen |
 | [`smoke/search.yml`](smoke/search.yml) | Searches for "Maestro" and asserts a matching result appears |
 | [`regression/article.yml`](regression/article.yml) | Searches "Albert Einstein", opens the article from the results, and confirms the article page loads |
 
 ## Repo layout
 
-Start with `maestrostack.yml` — it ties everything below together.
+Start with `maestrostack.yml`. It ties everything below together.
 
-- **`maestrostack.yml`** — the config: which app, which flows, which devices.
-- **`smoke/`, `regression/`** — the Maestro flows, split like a real suite.
-- **`apps/`** — the Wikipedia APK, committed so there's nothing to download.
-- **`package.json`** — pins the CLI and adds the `validate` / `dry-run` / `run` scripts.
-- **`.env.example`** — copy to `.env` and drop in your credentials.
+- **`maestrostack.yml`** is the config: which app, which flows, which devices.
+- **`smoke/`, `regression/`** hold the Maestro flows, split like a real suite.
+- **`apps/`** holds the Wikipedia APK, committed so there's nothing to download.
+- **`package.json`** pins the CLI and adds the `validate`, `dry-run`, and `run` scripts.
+- **`.env.example`** is the credential template you copy to `.env`.
 
 ## Customizing
 
@@ -91,5 +91,11 @@ Start with `maestrostack.yml` — it ties everything below together.
   override per run: `npx maestrostack run --device "Google Pixel 7-13.0"`.
 - **Run a subset of flows?** `npx maestrostack run --execute smoke/search.yml`.
 
-See the [maestrostack README](https://github.com/RohanImmanuel/maestrostack) for the full config
-reference and command list.
+## Acknowledgements
+
+The bundled `apps/WikipediaSample.apk` is the official
+[Wikipedia Android app](https://github.com/wikimedia/apps-android-wikipedia) by the Wikimedia
+Foundation, open source under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+"Wikipedia" is a trademark of the Wikimedia Foundation. This demo is an independent example and is
+not affiliated with, endorsed by, or sponsored by the Wikimedia Foundation or BrowserStack.

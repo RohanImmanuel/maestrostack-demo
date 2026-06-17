@@ -9,6 +9,6 @@
     "run": "maestrostack run"
   },
   "devDependencies": {
-    "maestrostack": "^0.1.1"
+    "maestrostack": "^0.2.0"
   }
 }

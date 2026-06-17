@@ -8,7 +8,7 @@ This repo ships everything you need to see it work end to end:
 
 - the real **Wikipedia sample app** (`apps/WikipediaSample.apk`),
 - three ready-made Maestro flows (`smoke/`, `regression/`),
-- a complete `maestrostack.yml`.
+- a complete `maestrostack.config.yml`.
 
 Add your BrowserStack credentials, run one command, and watch a build appear on your dashboard.
 
@@ -56,7 +56,7 @@ This discovers the flows, builds `.maestrostack/Flows.zip`, and prints the exact
 
 ## What this demo runs
 
-The `maestrostack.yml` targets three real devices and uses `maxParallel: 2`, so maestrostack runs
+The `maestrostack.config.yml` targets three real devices and uses `maxParallel: 2`, so maestrostack runs
 the first two devices together and the third in a second batch:
 
 | Device | OS |
@@ -75,9 +75,9 @@ Three flows execute against the Wikipedia sample app (`org.wikipedia.alpha`):
 
 ## Repo layout
 
-Start with `maestrostack.yml`. It ties everything below together.
+Start with `maestrostack.config.yml`. It ties everything below together.
 
-- **`maestrostack.yml`** is the config: which app, which flows, which devices.
+- **`maestrostack.config.yml`** is the config: which app, which flows, which devices.
 - **`smoke/`, `regression/`** hold the Maestro flows, split like a real suite.
 - **`apps/`** holds the Wikipedia APK, committed so there's nothing to download.
 - **`package.json`** pins the CLI and adds the `validate`, `dry-run`, and `run` scripts.
@@ -85,7 +85,7 @@ Start with `maestrostack.yml`. It ties everything below together.
 
 ## Customizing
 
-- **Different app?** Drop your `.apk` into `apps/`, update `app.path` in `maestrostack.yml`, and
+- **Different app?** Drop your `.apk` into `apps/`, update `app.path` in `maestrostack.config.yml`, and
   point the flows' `appId` at your package.
 - **Different devices?** Edit `run.devices` (any BrowserStack-supported `Device-OS` string), or
   override per run: `npx maestrostack run --device "Google Pixel 7-13.0"`.
